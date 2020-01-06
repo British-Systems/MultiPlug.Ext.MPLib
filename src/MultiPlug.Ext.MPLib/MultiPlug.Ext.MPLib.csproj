@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F7B01DE-13BD-49BE-B0C6-0888394AB198}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MultiPlug.Ext.MPLib</RootNamespace>
+    <AssemblyName>MultiPlug.Ext.MPLib</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MultiPlug.Base, Version=1.0.38.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MultiPlug.Base.1.0.38\lib\net472\MultiPlug.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="MultiPlug.Extension.Core, Version=1.0.52.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MultiPlug.Extension.Core.1.0.52\lib\net472\MultiPlug.Extension.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\Apps\EventPicker\EventPickerApp.cs" />
+    <Compile Include="Controllers\Apps\EventPicker\HomeController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Controllers\ScriptsController.cs" />
+    <Compile Include="Controllers\StylesController.cs" />
+    <Compile Include="Core.cs" />
+    <Compile Include="Models\Apps\EventPicker.cs" />
+    <Compile Include="MPLib.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Controllers\Apps\EventPicker\EventPicker.cshtml" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scripts\bootstrap.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scripts\jquery-1.6.4.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scripts\jquery-3.2.1.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Scripts\eventpicker.js" />
+    <Content Include="Resources\Scripts\multiplugpart1.js" />
+    <Content Include="Resources\Scripts\multiplugpart2.js" />
+    <None Include="Resources\Images\throbber.gif" />
+    <None Include="Resources\Images\32px.png" />
+    <None Include="Resources\Images\ssdp.png" />
+    <Content Include="Resources\Scripts\bootstrap.js" />
+    <Content Include="Resources\Scripts\jquery-1.10.2.js" />
+    <Content Include="Resources\Scripts\jquery-3.2.1.js" />
+    <Content Include="Resources\Scripts\jquery.signalR-2.2.2.min.js" />
+    <None Include="Resources\Scripts\jstree.min.js" />
+    <None Include="Resources\Styles\jstree.style.min.css" />
+    <None Include="Resources\Styles\bootstrap.min.css" />
+    <None Include="Resources\Scripts\jquery.signalR-2.2.2.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Fonts\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
