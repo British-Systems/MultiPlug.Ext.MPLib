@@ -7,7 +7,7 @@
     <authors>British Systems</authors>
     <owners>British Systems</owners>
     <projectUrl>https://github.com/british-systems/MultiPlug.Ext.MPLib</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/british-systems/MultiPlug.Ext.MPLib/master/multiplug.ico</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/british-systems/MultiPlug.Ext.MPLib/master/media/multiplug.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Helpful Front End library (Javascripts) for the MultiPlug .Net Edge Computing Platform</description>
     <releaseNotes>1.0.2 Bug: Event Picker
