@@ -4,7 +4,7 @@ using MultiPlug.Base.Http;
 namespace MultiPlug.Ext.MPLib.Controllers.Apps.EventPicker
 {
     [Route("")]
-    class HomeController : Controller
+    public class HomeController : EventPickerApp
     {
         public Response Get()
         {

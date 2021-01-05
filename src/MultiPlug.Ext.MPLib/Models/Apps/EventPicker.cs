@@ -5,6 +5,6 @@ namespace MultiPlug.Ext.MPLib.Models.Apps
 {
     public class EventPicker
     {
-        public Base.Exchange.Extension[] Extensions { get; set; }
+        public Base.Exchange.IExtension[] Extensions { get; set; }
     }
 }

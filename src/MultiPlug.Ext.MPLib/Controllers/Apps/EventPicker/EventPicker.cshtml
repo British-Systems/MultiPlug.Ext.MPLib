@@ -1,4 +1,4 @@
-﻿@model MultiPlug.Extension.Models.WebAppModel<MultiPlug.Ext.MPLib.Models.Apps.EventPicker>
+﻿@model MultiPlug.Base.Http.EdgeApp
 <div id="mp-modal-eventselect" class="mp-modal">
     <div class="mp-modal-dialog">
         <div class="mp-modal-content">
@@ -14,10 +14,10 @@
                 <input type="hidden" id="mp-modal-eventselectvalue" value="">
                 <div id="jstree">
                     <ul>
-                        @foreach (var Extension in @Model.ExtensionModel.Extensions)
+                        @foreach (var Extension in @Model.MultiPlugAPI.Extensions)
                         {
                             <li>
-                                @Extension.Name (@Extension.Events.Count())
+                                @Extension.Meta.Assembly [@Extension.Meta.Name] (@Extension.Events.Count())
                                 <ul>
                                     @foreach (var Event in Extension.Events)
                                     {
@@ -214,8 +214,8 @@
 
     </style>
 
-    <link rel="stylesheet" href="assets/mplib/styles/jstree.style.min.css" />
-    <script src="assets/mplib/scripts/jstree.min.js"></script>
+    <link rel="stylesheet" href="@Raw(Model.Context.Paths.Assets)styles/jstree.style.min.css" />
+    <script src="@Raw(Model.Context.Paths.Assets)scripts/jstree.min.js"></script>
 
     <script>
         $('#jstree').jstree();

@@ -1,16 +1,16 @@
-﻿using MultiPlug.Base.Attribute;
+﻿using System.Text;
+using MultiPlug.Base.Attribute;
 using MultiPlug.Base.Http;
 using MultiPlug.Ext.MPLib.Properties;
-using System.Text;
 
-namespace MultiPlug.Theme.MultiPlugLibrary.Controllers
+namespace MultiPlug.Ext.MPLib.Controllers
 {
     [Route("styles/*")]
-    public class StylesController : Controller
+    public class StylesController : AssetsEndpoint
     {
         public Response Get(string FileName)
         {
-            string result = "";
+            string result = string.Empty;
 
             if (FileName == "bootstrap.min.css")
             {
@@ -21,8 +21,7 @@ namespace MultiPlug.Theme.MultiPlugLibrary.Controllers
                 result = Resources.jstree_style_min_css;
             }
 
-
-            if (result != "")
+            if (result != string.Empty)
             {
                 return new Response { MediaType = "text/css", RawBytes = Encoding.ASCII.GetBytes(result) };
             }

@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using MultiPlug.Base.Http;
+﻿using MultiPlug.Base.Http;
 using MultiPlug.Extension.Core.Attribute;
-using MultiPlug.Extension.Core.Http;
 
 namespace MultiPlug.Ext.MPLib.Controllers.Apps.EventPicker
 {
@@ -9,16 +7,7 @@ namespace MultiPlug.Ext.MPLib.Controllers.Apps.EventPicker
     [ViewAs(ViewAs.FullScreen)]
     [Name("Event Picker")]
     [HttpEndpointType(HttpEndpointType.App)]
-    public class EventPickerApp : HttpEndpoint
+    public class EventPickerApp : Controller
     {
-        readonly Controller[] m_Controllers = new Controller[] { new HomeController() };
-
-        public override IEnumerable<Controller> Controllers
-        {
-            get
-            {
-                return m_Controllers;
-            }
-        }
     }
 }

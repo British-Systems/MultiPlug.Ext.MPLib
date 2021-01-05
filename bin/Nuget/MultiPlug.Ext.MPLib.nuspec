@@ -2,20 +2,29 @@
 <package >
   <metadata>
     <id>MultiPlug.Ext.MPLib</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <title>MultiPlug Front End Library</title>
     <authors>British Systems</authors>
     <owners>British Systems</owners>
     <projectUrl>https://github.com/british-systems/MultiPlug.Ext.MPLib</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/british-systems/MultiPlug.Ext.MPLib/master/media/multiplug.ico</iconUrl>
+    <icon>images\multiplugico.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Helpful Front End library (Javascripts) for the MultiPlug .Net Edge Computing Platform</description>
-    <releaseNotes>1.0.2 Bug: Event Picker
+    <releaseNotes>1.0.3 Compatible with MultiPlug.Core 2.2.68
+1.0.2 Bug: Event Picker
 1.0.1 Published</releaseNotes>
-    <copyright>Great British Systems Ltd 2020</copyright>
+    <copyright>Great British Systems Ltd 2021</copyright>
     <tags>MultiPlug Edge_Computing IOT IIOT</tags>
     <dependencies>
-      <dependency id="MultiPlug.Core" version="2.2.64" />
+      <group targetFramework=".NETFramework4.7.2">
+        <dependency id="MultiPlug.Base" version="1.0.49" />
+        <dependency id="MultiPlug.Extension.Core" version="1.0.59" />
+        <dependency id="MultiPlug.Core" version="2.2.68" />
+      </group>
     </dependencies>
   </metadata>
+  <files>
+    <file src="images\multiplugico.png" target="images\" />
+    <file src="..\..\src\MultiPlug.Ext.MPLib\bin\Release\MultiPlug.Ext.MPLib.dll" target="lib\net472" />
+  </files>
 </package>

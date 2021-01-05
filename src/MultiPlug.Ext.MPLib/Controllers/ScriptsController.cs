@@ -1,14 +1,14 @@
 ﻿using System.Text;
-using MultiPlug.Base.Attribute;
-using MultiPlug.Base.Http;
 using System.Linq;
 using System.Collections.Generic;
+using MultiPlug.Base.Attribute;
+using MultiPlug.Base.Http;
 using MultiPlug.Ext.MPLib.Properties;
 
-namespace MultiPlug.Theme.MultiPlugLibrary.Controllers
+namespace MultiPlug.Ext.MPLib.Controllers
 {
     [Route("scripts/*")]
-    public class ScriptsController : Controller
+    public class ScriptsController : AssetsEndpoint
     {
         public Response Get(string theScriptName)
         {
