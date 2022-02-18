@@ -12,7 +12,6 @@ namespace MultiPlug.Ext.MPLib.Controllers.Apps.EventPicker
             {
                 Model = new Models.Apps.EventPicker
                 {
-                    Extensions = Core.Instance.MultiPlugAPI.Extensions
                 },
                 Template = "EventPicker_Home"
             };

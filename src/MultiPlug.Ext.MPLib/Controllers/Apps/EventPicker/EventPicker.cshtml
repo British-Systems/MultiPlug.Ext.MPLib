@@ -1,6 +1,6 @@
 ﻿@model MultiPlug.Base.Http.EdgeApp
 <div id="mp-modal-eventselect" class="mp-modal">
-    <div class="mp-modal-dialog">
+    <div class="mp-modal-dialog modal-dialog-centered">
         <div class="mp-modal-content">
             <div class="mp-modal-header">
                 <div class="title-icon">
@@ -21,10 +21,21 @@
                                 <ul>
                                     @foreach (var Event in Extension.Events)
                                     {
-                                        <li id="@Event.Id" class="mp-modal-eventid">
-                                            @Event.Description
+                                        <li data-event-id="@Event.Id" class="mp-modal-eventid">
+                                            ID: @Event.Id @Event.Description
                                             <ul>
-                                                <li>Event ID: @Event.Id</li>
+                                                <li data-event-id="@Event.Id" class="mp-modal-eventid">
+                                                    Description: @Event.Description
+                                                    @if (Event.Subjects != null)
+                                                    {
+                                                    <ul>
+                                                    @for(int i = 0; i < Event.Subjects.Length; i++)
+                                                    {
+                                                        <li data-event-id="@Event.Id" data-event-id-index="@i.ToString()" class="mp-modal-eventid">Subject: @Event.Subjects[i]</li>
+                                                    }
+                                                    </ul>
+                                                    }
+                                                </li>
                                             </ul>
                                         </li>
                                     }
@@ -36,12 +47,24 @@
             </div>
 
             <div class="mp-modal-footer">
-                <button type="button" class="mp-modal-btn mp-modal-btn-darkgrey mp-modal-btn-close waves-effect waves-light">Close</button>
+                <label style="margin-bottom: 0px; width: 120px; font-weight: bold;" for="mp-modal-eventid-input">EVENT ID</label>
+                <input type="text" id="mp-modal-eventid-input" class="mr-auto">
+                <button type="button" id="mp-modal-btn-apply" class="mp-modal-btn mp-modal-btn-darkgrey waves-effect waves-light">Apply</button>
+                <button type="button" class="mp-modal-btn mp-modal-btn-darkgrey mp-modal-btn-close waves-effect waves-light">Cancel</button>
             </div>
         </div>
     </div>
 
     <style>
+        #mp-modal-eventid-input {
+            padding: 11px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: 7px;
+            width: 100%;
+        }
+
         .mp-modal {
             position: fixed;
             top: 0;
@@ -221,11 +244,18 @@
         $('#jstree').jstree();
 
         $('#jstree').on("select_node.jstree", function (e, data) {
-            var EventIdObject = $("#" + data.selected).closest( ".mp-modal-eventid" );
+            var EventIdObject = $("#" + data.selected);//.closest( ".mp-modal-eventid" );
 
-            if( EventIdObject.length !== 0 )
+            if($(EventIdObject).attr("data-event-id"))
             {
-                $('#mp-modal-eventselectvalue').val($( EventIdObject ).attr('id'));
+                var ID = $(EventIdObject).data('event-id');
+
+                if ($(EventIdObject).attr("data-event-id-index"))
+                {
+                    ID = ID + "[" + $(EventIdObject).data('event-id-index') + "]";
+                }
+
+                $('#mp-modal-eventselectvalue').val(ID);
                 $("#mp-modal-eventselectvalue").trigger("change");
             }
         });
