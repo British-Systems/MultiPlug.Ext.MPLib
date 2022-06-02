@@ -21,6 +21,10 @@
         window.location.reload(true);
     };
 
+    $.connection.wS.client.ping = function () {
+        hub.server.pong();
+    };
+
     $.connection.hub.reconnecting(function() {
         console.log('Web Socket Reconnecting.');
 
