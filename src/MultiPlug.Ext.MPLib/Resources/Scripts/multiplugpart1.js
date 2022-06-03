@@ -1,14 +1,13 @@
 ﻿(function ($, window) {
 
     $.multiplug = {
-        // subscribedEvent : new Event('onMultiPlugViewSubscribed')
     };
 
     $.connection.hub.url = "stream";
     var hub = $.connection.wS;
 
     $.connection.hub.error(function (error) {
-        console.log('Web Socket Error: ' + error);
+        console.error('Web Socket Error: ' + error);
     });
 
     $.connection.hub.logging = true;
@@ -21,15 +20,12 @@
         window.location.reload(true);
     };
 
-    $.connection.wS.client.ping = function () {
-        hub.server.pong();
-    };
-
     $.connection.hub.reconnecting(function() {
-        console.log('Web Socket Reconnecting.');
+        console.warn('Web Socket Reconnecting.');
 
         window.dispatchEvent(new CustomEvent("multiplugReconnecting", {}));
 
+        // TODO Move the following out of this file as it's too hard coding to the Default2016 Theme.
         try{
             $("#websocket-title").text("Connection lost.");
             $("#websocket-txt-line1").text("The connection to the MultiPlug Server has been lost. Attempts are being made to restore the connection.");
@@ -46,7 +42,7 @@
     });
 
     $.connection.hub.reconnected(function() {
-        console.log('Web Socket Reconnected.');
+        console.info('Web Socket Reconnected.');
 
         window.dispatchEvent(new CustomEvent("multiplugReconnected", {}));
 
@@ -61,10 +57,15 @@
 
     $.connection.hub.disconnected(function() {
         setTimeout(function() {
-            $.connection.hub.start();
+            console.warn('Disconnected, so attempting to reconnect.');
+            $.connection.hub.start().done(doSubscribe);
         }, 5000); // Restart connection after 5 seconds.
     });
 
-    $.connection.hub.start().done(function () {
+    $.connection.hub.start().done(doSubscribe);
 
+
+    function doSubscribe()
+    {
+        console.info('Subscribing');
         var ResponseId = '

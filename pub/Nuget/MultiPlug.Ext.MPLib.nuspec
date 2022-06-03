@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MultiPlug.Ext.MPLib</id>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
     <title>MultiPlug Front End Library</title>
     <authors>British Systems</authors>
     <owners>British Systems</owners>
@@ -10,7 +10,8 @@
     <icon>images\multiplugico.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Helpful Front End library (Javascripts) for the MultiPlug .Net Edge Computing Platform</description>
-    <releaseNotes>1.0.6 https://github.com/British-Systems/MultiPlug.Ext.MPLib/issues/1
+    <releaseNotes>1.0.7 https://github.com/British-Systems/MultiPlug.Ext.MPLib/issues/2
+1.0.6 https://github.com/British-Systems/MultiPlug.Ext.MPLib/issues/1
 1.0.5 Minor Bug - description being duplicated in the Event ID line of the event picker.
 1.0.4 Enhancements to the Event Picker - Selection of a subject.
 1.0.3 Compatible with MultiPlug.Core 2.2.68

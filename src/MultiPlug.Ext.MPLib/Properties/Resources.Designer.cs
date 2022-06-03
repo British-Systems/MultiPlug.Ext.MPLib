@@ -109,9 +109,9 @@ namespace MultiPlug.Ext.MPLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Extension.Models.WebAppModel&lt;MultiPlug.Ext.MPLib.Models.Apps.EventPicker&gt;
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///&lt;div id=&quot;mp-modal-eventselect&quot; class=&quot;mp-modal&quot;&gt;
-        ///    &lt;div class=&quot;mp-modal-dialog&quot;&gt;
+        ///    &lt;div class=&quot;mp-modal-dialog modal-dialog-centered&quot;&gt;
         ///        &lt;div class=&quot;mp-modal-content&quot;&gt;
         ///            &lt;div class=&quot;mp-modal-header&quot;&gt;
         ///                &lt;div class=&quot;title-icon&quot;&gt;
@@ -119,7 +119,8 @@ namespace MultiPlug.Ext.MPLib.Properties {
         ///                &lt;/div&gt;
         ///                &lt;button type=&quot;button&quot; class=&quot;close mp-modal-btn-close&quot;&gt;
         ///                    &lt;span&gt;×&lt;/span&gt;
-        ///        [rest of string was truncated]&quot;;.
+        ///                &lt;/button&gt;
+        ///            &lt;/ [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string EventPicker_html {
             get {
@@ -133,13 +134,13 @@ namespace MultiPlug.Ext.MPLib.Properties {
         ///
         ///        var TheValueToUpdate = $(this);
         ///
-        ///        $.get(&quot;apps/mplib/event-picker/&quot;, function (data, status) {
+        ///        $.get(&quot;apps/multiplug.ext.mplib/event-picker/&quot;, function (data, status) {
         ///            $(&apos;body&apos;).append(&apos;&lt;div id=&quot;mp-modal-eventselectbackdrop&quot; class=&quot;mp-modal-backdrop fade show&quot;&gt;&lt;/div&gt;&apos;);
         ///            $(&apos;body&apos;).prepend(data);
         ///
         ///            $(&quot;#mp-modal-eventselectvalue&quot;).change(function () {
-        ///                TheValueToUpdate.val($(this).val());
-        ///                $(&quot;#mp-modal-events [rest of string was truncated]&quot;;.
+        ///                $(&quot;#mp-modal-eventid-input&quot;).val($(this).val());
+        ///          [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string eventpicker_js {
             get {
@@ -214,18 +215,18 @@ namespace MultiPlug.Ext.MPLib.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to /*!
-        /// * ASP.NET SignalR JavaScript Library v2.2.2
+        /// * ASP.NET SignalR JavaScript Library 2.4.3
         /// * http://signalr.net/
         /// *
         /// * Copyright (c) .NET Foundation. All rights reserved.
         /// * Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
         /// *
         /// */
-        ///(function (n, t, i) { function w(t, i) { var u, f; if (n.isArray(t)) { for (u = t.length - 1; u &gt;= 0; u--) f = t[u], n.type(f) === &quot;string&quot; &amp;&amp; r.transports[f] || (i.log(&quot;Invalid transport: &quot; + f + &quot;, removing it from the transports list.&quot;), t.splice(u, 1) [rest of string was truncated]&quot;;.
+        ///(function(n,t,i){function w(t,i){var u,f;if(n.isArray(t)){for(u=t.length-1;u&gt;=0;u--)f=t[u],n.type(f)===&quot;string&quot;&amp;&amp;r.transports[f]||(i.log(&quot;Invalid transport: &quot;+f+&quot;, removing it from the transports list.&quot;),t.splice(u,1));t.length===0&amp;&amp;(i.log(&quot;No transports remain wi [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string jquery_signalR_2_2_2_min_js {
+        internal static string jquery_signalR_2_4_3_min {
             get {
-                return ResourceManager.GetString("jquery_signalR_2_2_2_min_js", resourceCulture);
+                return ResourceManager.GetString("jquery_signalR_2_4_3_min", resourceCulture);
             }
         }
         

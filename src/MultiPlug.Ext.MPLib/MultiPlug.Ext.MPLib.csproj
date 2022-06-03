@@ -91,6 +91,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Scripts\eventpicker.js" />
+    <Content Include="Resources\Scripts\jquery.signalR-2.4.3.js" />
+    <Content Include="Resources\Scripts\jquery.signalR-2.4.3.min.js" />
     <Content Include="Resources\Scripts\multiplugpart1.js" />
     <Content Include="Resources\Scripts\multiplugpart2.js" />
     <None Include="Resources\Images\throbber.gif" />
@@ -99,11 +101,9 @@
     <Content Include="Resources\Scripts\bootstrap.js" />
     <Content Include="Resources\Scripts\jquery-1.10.2.js" />
     <Content Include="Resources\Scripts\jquery-3.2.1.js" />
-    <Content Include="Resources\Scripts\jquery.signalR-2.2.2.min.js" />
     <None Include="Resources\Scripts\jstree.min.js" />
     <None Include="Resources\Styles\jstree.style.min.css" />
     <None Include="Resources\Styles\bootstrap.min.css" />
-    <None Include="Resources\Scripts\jquery.signalR-2.2.2.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Fonts\" />

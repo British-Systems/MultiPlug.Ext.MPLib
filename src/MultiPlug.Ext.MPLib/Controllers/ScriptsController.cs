@@ -28,7 +28,7 @@ namespace MultiPlug.Ext.MPLib.Controllers
             }
             else if (theScriptName == "websocket.min.js")
             {
-                result = Resources.jquery_signalR_2_2_2_min_js;
+                result = Resources.jquery_signalR_2_4_3_min;
             }
             else if (theScriptName == "bootstrap.min.js")
             {

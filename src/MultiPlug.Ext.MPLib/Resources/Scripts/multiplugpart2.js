@@ -7,13 +7,7 @@
 
         hub.server.subscribe( ResponseId );
 
-        // $(document).trigger("multiplugReady");
-
-        var event = new CustomEvent("multiplugReady", {
-        });
-
-        window.dispatchEvent(event);
-
-    });
+        window.dispatchEvent(new CustomEvent("multiplugReady", {}));
+    };
 
 }(window.jQuery, window));
