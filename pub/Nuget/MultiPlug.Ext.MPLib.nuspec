@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MultiPlug.Ext.MPLib</id>
-    <version>1.0.7</version>
+    <version>1.0.8</version>
     <title>MultiPlug Front End Library</title>
     <authors>British Systems</authors>
     <owners>British Systems</owners>
@@ -10,7 +10,8 @@
     <icon>images\multiplugico.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Helpful Front End library (Javascripts) for the MultiPlug .Net Edge Computing Platform</description>
-    <releaseNotes>1.0.7 https://github.com/British-Systems/MultiPlug.Ext.MPLib/issues/2
+    <releaseNotes>1.0.8 https://github.com/British-Systems/MultiPlug.Ext.MPLib/issues/3
+1.0.7 https://github.com/British-Systems/MultiPlug.Ext.MPLib/issues/2
 1.0.6 https://github.com/British-Systems/MultiPlug.Ext.MPLib/issues/1
 1.0.5 Minor Bug - description being duplicated in the Event ID line of the event picker.
 1.0.4 Enhancements to the Event Picker - Selection of a subject.
@@ -21,9 +22,9 @@
     <tags>MultiPlug Edge_Computing IOT IIOT</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.7.2">
-        <dependency id="MultiPlug.Base" version="1.0.67" />
+        <dependency id="MultiPlug.Base" version="1.0.71" />
         <dependency id="MultiPlug.Extension.Core" version="1.0.63" />
-        <dependency id="MultiPlug.Core" version="2.2.79" />
+        <dependency id="MultiPlug.Core" version="2.2.80" />
       </group>
     </dependencies>
   </metadata>
