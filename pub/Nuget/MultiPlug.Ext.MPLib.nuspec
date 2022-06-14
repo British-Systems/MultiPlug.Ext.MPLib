@@ -10,6 +10,8 @@
     <icon>images\multiplugico.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Helpful Front End library (Javascripts) for the MultiPlug .Net Edge Computing Platform</description>
+	<license type="expression">MIT</license>
+	<repository type="git" url="https://github.com/British-Systems/MultiPlug.Ext.MPLib" />
     <releaseNotes>1.0.8 https://github.com/British-Systems/MultiPlug.Ext.MPLib/issues/3
 1.0.7 https://github.com/British-Systems/MultiPlug.Ext.MPLib/issues/2
 1.0.6 https://github.com/British-Systems/MultiPlug.Ext.MPLib/issues/1
