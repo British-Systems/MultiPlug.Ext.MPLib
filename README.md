@@ -4,7 +4,7 @@ Helpful Front End library (Javascripts) for the MultiPlug .Net Edge Computing Pl
 ## Runtime
 ### Screenshots
 #### Event Picker
-![Image of MultiPlug Event Picker](https://raw.githubusercontent.com/British-Systems/MultiPlug.Ext.MPLib/master/media/MultiPlug-Event-Picker.jpg)
+![Image of MultiPlug Event Picker](https://user-images.githubusercontent.com/41692418/206565056-b2892935-55c4-415b-b677-e59cae899cec.gif)
 
 ## How to use
 
