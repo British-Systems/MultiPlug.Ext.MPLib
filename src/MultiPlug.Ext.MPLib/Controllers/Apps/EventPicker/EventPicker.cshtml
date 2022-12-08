@@ -55,18 +55,18 @@
                                                 <li data-event-id="@Event.Id" class="mp-modal-eventid">
                                                     ID: @Event.Id
                                                     <ul>
-                                                        <li data-event-id="@Event.Id" class="mp-modal-eventid">
-                                                            Description: @Event.Description
-                                                            @if (Event.Subjects != null)
-                                                            {
-                                                                <ul>
-                                                                    @for (int i = 0; i < Event.Subjects.Length; i++)
-                                                                    {
-                                                                        <li data-event-id="@Event.Id" data-event-id-index="@i.ToString()" class="mp-modal-eventid">Subject: @Event.Subjects[i]</li>
-                                                                    }
-                                                                </ul>
-                                                            }
+                                                        <li data-event-id="@Event.Id" class="mp-modal-eventid">Description: @Event.Description</li>
+                                                        @if (Event.Subjects != null)
+                                                        {
+                                                        <li data-event-id="@Event.Id" class="mp-modal-eventid">Subjects
+                                                            <ul>
+                                                                @for (int i = 0; i < Event.Subjects.Length; i++)
+                                                                {
+                                                                    <li data-event-id="@Event.Id" data-event-id-index="@i.ToString()" class="mp-modal-eventid">@i.ToString(): @Event.Subjects[i]</li>
+                                                                }
+                                                            </ul>
                                                         </li>
+                                                        }
                                                     </ul>
                                                 </li>
                                             }
@@ -89,18 +89,19 @@
                                                             <li data-event-id="@Event.Id" class="mp-modal-eventid">
                                                                 ID: @Event.Id
                                                                 <ul>
-                                                                    <li data-event-id="@Event.Id" class="mp-modal-eventid">
-                                                                        Description: @Event.Description
-                                                                        @if (Event.Subjects != null)
-                                                                        {
+                                                                    <li data-event-id="@Event.Id" class="mp-modal-eventid">Description: @Event.Description</li>
+                                                                    @if (Event.Subjects != null)
+                                                                    {
+                                                                        <li data-event-id="@Event.Id" class="mp-modal-eventid">
+                                                                            Subjects
                                                                             <ul>
                                                                                 @for (int i = 0; i < Event.Subjects.Length; i++)
                                                                                 {
-                                                                                    <li data-event-id="@Event.Id" data-event-id-index="@i.ToString()" class="mp-modal-eventid">Subject: @Event.Subjects[i]</li>
+                                                                                    <li data-event-id="@Event.Id" data-event-id-index="@i.ToString()" class="mp-modal-eventid">@i.ToString(): @Event.Subjects[i]</li>
                                                                                 }
                                                                             </ul>
-                                                                        }
-                                                                    </li>
+                                                                        </li>
+                                                                    }
                                                                 </ul>
                                                             </li>
                                                         }
@@ -314,20 +315,65 @@
     <script>
         $('#jstree').jstree();
 
+        var previousID = '';
+        var previousIndexArray = [];
+
         $('#jstree').on("select_node.jstree", function (e, data) {
-            var EventIdObject = $("#" + data.selected);//.closest( ".mp-modal-eventid" );
+            var EventIdObject = $("#" + data.selected);
 
             if($(EventIdObject).attr("data-event-id"))
             {
-                var ID = $(EventIdObject).data('event-id');
+                var EventId = $(EventIdObject).data('event-id');
 
-                if ($(EventIdObject).attr("data-event-id-index"))
+                if (previousID === EventId)
                 {
-                    ID = ID + "[" + $(EventIdObject).data('event-id-index') + "]";
-                }
+                    if ($(EventIdObject).attr("data-event-id-index")) {
 
-                $('#mp-modal-eventselectvalue').val(ID);
-                $("#mp-modal-eventselectvalue").trigger("change");
+                        var foundInIndexArray = false;
+                        var selectedSubject = $(EventIdObject).data('event-id-index');
+
+                        for (var i = 0; i < previousIndexArray.length; i++) {
+
+                            if (previousIndexArray[i] === selectedSubject) {
+                                previousIndexArray.splice(i, 1);
+                                foundInIndexArray = true;
+                            }
+                        }
+
+                        if (!foundInIndexArray) {
+                            previousIndexArray.push(selectedSubject);
+                        }
+
+                        if (previousIndexArray.length == 0) {
+                            $('#mp-modal-eventselectvalue').val("");
+                        }
+                        else {
+                            $('#mp-modal-eventselectvalue').val(EventId + "[" + String(previousIndexArray) + "]");
+                        }
+                    }
+                    else
+                    {
+                        previousIndexArray = [];
+                        $('#mp-modal-eventselectvalue').val(EventId);
+                    }
+
+                    $("#mp-modal-eventselectvalue").trigger("change");
+                }
+                else
+                {
+                    previousID = EventId;
+                    if ($(EventIdObject).attr("data-event-id-index")) {
+                        previousIndexArray = [$(EventIdObject).data('event-id-index')];
+                        $('#mp-modal-eventselectvalue').val(EventId + "[" + previousIndexArray[0] + "]");
+                    }
+                    else
+                    {
+                        previousIndexArray = [];
+                        $('#mp-modal-eventselectvalue').val(EventId);
+                    }
+
+                    $("#mp-modal-eventselectvalue").trigger("change");
+                }
             }
         });
 
